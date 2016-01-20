@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        // closure: able to call global variable inside of function ??
+        var closureFunc = function () {
+            var strTest = 'variable inside function';
+        };
+
+        //console.log(strTest);
+
+        var publicTest = 'variable outside function';
+        var closureFunc2 = function () {
+            console.log(publicTest);
+        }
+        closureFunc2();
+
+        // CLOSURE : an innerfunction that has access to the outer function's variables
+        // in addition to it's own variables and global variables.
+        // In simple terms a closure is function inside a function. These functions, that is the inner and outer
+        // functions could be named functions or anonymous functions
+
+        var incrementClickCount = (function () {
+            var clickCount = 0;
+            return function () {
+                return ++clickCount;
+            };
+        })();
+        //console.log(incrementClickCount());
+    </script>
+    <input type="button" value="Click Me" onclick="alert(incrementClickCount());" />
+</body>
+</html>
