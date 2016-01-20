@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        // self invocation anonymous function
+        (function(){
+            var strHi = 'Hello';
+            var moduleFunc = function () {
+                return strHi;
+            };
+
+            console.log(strHi);
+        }());
+        
+        //console.log(strHi);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+         
+        var myObject = (function () {
+            var strHi = 'Hello';
+            var intCount = 0;
+
+            var hi = function () {
+                intCount += 1;
+                return strHi;
+            };
+
+            var getCounter = function () {
+                return intCount;
+            }
+            //return hi();
+            return {
+                //getHi: function () {
+                //    return strHi;
+                //},
+                getHi: hi,
+
+                getHi2: function() {
+                    return 'Nice to meet you';
+                },
+                //getCount: intCount
+                getCount: getCounter
+            }
+        })();
+
+        console.log(myObject.getHi());
+        console.log(myObject.getHi2());
+        //console.log(myObject.getCount);
+        console.log(myObject.getHi());
+        console.log(myObject.getCount());
+    </script>
+</body>
+</html>
