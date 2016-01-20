@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        function myFunc() {
+            console.log("Execute a basic function");
+        }
+
+        myFunc();
+
+        var varPrint = function printMe() {
+            console.log("Execute a printMe()");
+            varPrint.callCount += 1;
+        };
+        // add public static property
+        varPrint.callCount = 1;
+        varPrint();
+        console.log(varPrint.callCount);
+    </script>
+</body>
+</html>
