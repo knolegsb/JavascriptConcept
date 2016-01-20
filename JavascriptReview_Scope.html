@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        // variable declaration : global object, it will be blong to window object
+        // public
+        var strTest = "Hello World";
+        console.log(this.strTest);
+        console.log(window.strTest);
+
+        // local variable
+        var localFunc = function () {
+            // private
+            var strHi = 'Hello';
+        };
+
+        console.log(localFunc.strHi); // it is declared in the enclosed area of localfunc, so it can't be called
+
+        var localFunc2 = function () {
+            var strBye = 'Bye~';
+            return strBye; // return for using outside
+        }
+
+        console.log(localFunc2());
+    </script>
+</body>
+</html>
